@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정수진 | 브랜딩 전문가 디지털 웹명함</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 배경 애니메이션 그라디언트 블러 구체들 -->
+  <div class="bg-blur-blob blob-1"></div>
+  <div class="bg-blur-blob blob-2"></div>
+  <div class="bg-blur-blob blob-3"></div>
+
+  <!-- 상단 컨트롤 (테마 변경 버튼) -->
+  <header class="top-nav">
+    <button id="themeToggleBtn" class="icon-btn" aria-label="테마 변경">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
+
+  <main class="card-wrapper">
+    <!-- 3D 틸트 효과 적용 명함 본체 -->
+    <div class="business-card" id="businessCard">
+      <!-- 카드 상단 배너 / 상태 뱃지 -->
+      <div class="card-banner">
+        <span class="badge active-status">
+          <span class="status-dot"></span> Branding & Consulting
+        </span>
+      </div>
+
+      <!-- 프로필 이미지 영역 -->
+      <div class="profile-section">
+        <div class="avatar-ring">
+          <img src="profile.jpg" alt="정수진 프로필 사진" class="avatar-img" id="profileImg">
+        </div>
+        
+        <!-- 이름, 직업, 한줄 소개 -->
+        <h1 class="user-name">정수진 <span class="en-name">Sujin Jeong</span></h1>
+        <p class="user-job">브랜딩 전문가 (Branding Specialist)</p>
+        <p class="user-bio">
+          "브랜드의 숨겨진 본질을 발견하고, 사람의 마음에 깊이 남는 고유한 가치를 디자인합니다."
+        </p>
+      </div>
+
+      <!-- 주요 전문 영역 태그 -->
+      <div class="tags-container">
+        <span class="tag">#BrandIdentity</span>
+        <span class="tag">#Storytelling</span>
+        <span class="tag">#DesignStrategy</span>
+        <span class="tag">#CreativeDirection</span>
+      </div>
+
+      <!-- 연락처 및 상세 정보 목록 -->
+      <div class="info-list">
+        <!-- 이메일 -->
+        <div class="info-item" onclick="copyToClipboard('sujane77@naver.com', '이메일 주소')">
+          <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+          <div class="info-text">
+            <span class="info-label">Email</span>
+            <span class="info-value">sujane77@naver.com</span>
+          </div>
+          <button class="copy-btn" title="복사"><i class="fa-regular fa-copy"></i></button>
+        </div>
+
+        <!-- 전화번호 -->
+        <div class="info-item" onclick="copyToClipboard('010-6526-5275', '전화번호')">
+          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-text">
+            <span class="info-label">Phone</span>
+            <span class="info-value">010-6526-5275</span>
+          </div>
+          <button class="copy-btn" title="복사"><i class="fa-regular fa-copy"></i></button>
+        </div>
+
+        <!-- 바로 전화 걸기 / 문자 -->
+        <div class="info-item link-item" onclick="window.location.href='tel:010-6526-5275'">
+          <div class="info-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <div class="info-text">
+            <span class="info-label">Call Directly</span>
+            <span class="info-value">010-6526-5275 (전화 연결)</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square external-link-icon"></i>
+        </div>
+
+        <!-- 이메일 보내기 바로가기 -->
+        <div class="info-item link-item" onclick="window.location.href='mailto:sujane77@naver.com'">
+          <div class="info-icon"><i class="fa-solid fa-paper-plane"></i></div>
+          <div class="info-text">
+            <span class="info-label">Send Message</span>
+            <span class="info-value">메일 보내기</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square external-link-icon"></i>
+        </div>
+      </div>
+
+      <!-- 액션 버튼들 (vCard 연락처 저장, 명함 공유) -->
+      <div class="action-buttons">
+        <button id="saveContactBtn" class="btn btn-primary">
+          <i class="fa-solid fa-address-book"></i> 연락처 저장 (.vcf)
+        </button>
+        <button id="shareBtn" class="btn btn-secondary">
+          <i class="fa-solid fa-share-nodes"></i> 명함 공유
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- 토스트 알림창 -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">복사되었습니다!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
